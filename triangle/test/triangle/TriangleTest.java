@@ -11,7 +11,6 @@ import static triangle.Triangle.Type.*;
  */
 public class TriangleTest {
 
-    @Test
     public void line_coverage(){
         Type actual = Triangle.classify(-1, 10, 10);
         assertEquals(actual,INVALID);
@@ -41,9 +40,8 @@ public class TriangleTest {
         assertEquals(actual,ISOSCELES);
         actual = Triangle.classify(2, 2, 4);
         assertEquals(actual,INVALID);
-    }
 
-    @Test
+    }
     public void branch_coverage(){
         Type actual = Triangle.classify(-1, 10, 10);
         assertEquals(actual,INVALID);
@@ -59,12 +57,9 @@ public class TriangleTest {
         assertEquals(actual,INVALID);
         actual = Triangle.classify(4, 4, 4);
         assertEquals(actual,EQUILATERAL);
-        actual = Triangle.classify(4, 4, 2);
-        assertEquals(actual,ISOSCELES);
-        actual = Triangle.classify(4, 2, 4);
-        assertEquals(actual,ISOSCELES);
-        actual = Triangle.classify(2, 4, 4);
-        assertEquals(actual,ISOSCELES);
+        test_ExpectedISO();
+        test_InvalidISO();
+
     }
 
     @Test
