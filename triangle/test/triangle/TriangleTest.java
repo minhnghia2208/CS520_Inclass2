@@ -141,6 +141,12 @@ public class TriangleTest {
         assertEquals(actual, expected);
         actual = Triangle.classify(3, 2, 1);
         assertEquals(actual, expected);
+
+        actual = Triangle.classify(10, 40, 20);
+        assertEquals(actual, expected);
+
+        actual = Triangle.classify(17, 2, 15);
+        assertEquals(actual, expected);
     }
 
     public void test_InvalidISO() {
